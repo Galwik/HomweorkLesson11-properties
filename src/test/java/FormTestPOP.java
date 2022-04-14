@@ -10,12 +10,11 @@ public class FormTestPOP extends TestBase {
     void fillForm() {
         FormPage formPage = new FormPage(driver);
 
-        formPage.setFirstName("Kamil");
         formPage.setFirstName(System.getProperty("firstName"));
-        formPage.setLastName("Gawlicki");
-        formPage.setEmail("kgawlicki@sii.pl");
+        formPage.setLastName(System.getProperty("lastName"));
+        formPage.setEmail(System.getProperty("email"));
         formPage.setRandomGender();
-        formPage.setAge("23");
+        formPage.setAge(System.getProperty("age"));
         formPage.setRandomYearsOfExperience();
         formPage.setProfessionToAutomationTester();
         formPage.setRandomContinent();
@@ -24,6 +23,6 @@ public class FormTestPOP extends TestBase {
         formPage.signIn();
 
         assertThat("Incorrect text", driver.findElement(By.cssSelector("#validator-message"))
-                .getText().equals("Form send with success"));
+                .getText().equals(System.getProperty("formMessage")));
     }
 }

@@ -24,7 +24,7 @@ public class EnvironmentProperty {
     private final String APP_ENVIRONMENT;
     private final BrowserEnvironment BROWSER_ENVIRONMENT;
 
-    private EnvironmentProperty(){
+    private EnvironmentProperty() {
         this.APP_ENVIRONMENT = initAppEnironment();
         this.BROWSER_ENVIRONMENT = new BrowserEnvironment();
         this.initEnv();
@@ -63,7 +63,7 @@ public class EnvironmentProperty {
 
 
                 try {
-                    ((List)files.filter((x$0) -> {
+                    ((List) files.filter((x$0) -> {
                         return Files.isRegularFile(x$0, new LinkOption[0]);
                     }).collect(Collectors.toList())).forEach((path) -> {
                         try {
@@ -111,8 +111,8 @@ public class EnvironmentProperty {
     private static class EnvironmentPropertySingleton {
         private static final EnvironmentProperty INSTANCE = new EnvironmentProperty();
 
-        //private EnvironmentPropertySingleton() {
-        //}
+//        private EnvironmentPropertySingleton() {
+//        }
     }
 
 }
