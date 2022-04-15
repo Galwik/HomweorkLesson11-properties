@@ -19,7 +19,7 @@ public class FormTestPOP extends TestBase {
         formPage.setProfessionToAutomationTester();
         formPage.setRandomContinent();
         formPage.setSwitchAndWaitSeleniumCommand(driver);
-        formPage.uploadFile("src/main/resources/fileToUpload");
+        formPage.uploadFile(System.getProperty("filePath"));
         formPage.signIn();
 
         assertThat("Incorrect text", driver.findElement(By.cssSelector("#validator-message"))
